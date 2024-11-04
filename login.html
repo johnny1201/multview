@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Configuração de Vídeos</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="password">Senha:</label>
+        <input type="password" id="password">
+        <button type="submit">Entrar</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+
+            if (password === 'adv_supervisor') {
+                window.location.href = 'configuracao.html';  // Redireciona para a página de configuração
+            } else {
+                alert('Senha incorreta');
+            }
+        });
+    </script>
+</body>
+</html>

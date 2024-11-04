@@ -1,0 +1,130 @@
+/* Fundo e layout devem ser iguais ao da página de configuração */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Estilização do botão de engrenagem no canto superior direito */
+.config-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #555;
+}
+
+h1 {
+    margin: 5px;
+    font-size: 1.5em;
+}
+
+div#videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Default layout */
+    grid-gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: 4px solid transparent; /* Borda padrão (invisível) */
+}
+
+/* Classe para quando o vídeo está pausado */
+.paused {
+    animation: blink-red 1s infinite;
+}
+
+@keyframes blink-red {
+    0% { border-color: red; }
+    50% { border-color: transparent; }
+    100% { border-color: red; }
+}
+
+/* Botão de reload */
+.reload-btn {
+    position: absolute;
+    top: 10px;
+    padding: 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    left: 10px; /* Botão de reload à esquerda */
+}
+
+.reload-btn i {
+    font-size: 16px; /* Tamanho do ícone */
+}
+
+.reload-btn:hover {
+    background-color: #555;
+}
+
+/* Texto sobre o vídeo */
+.status-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: none;
+    z-index: 100;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}

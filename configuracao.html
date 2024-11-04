@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Preview Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="configuracao.css">
+
+</head>
+<body>
+    <h1>Configuração de exibição</h1>
+    <!-- Botão de voltar para a página de visualização -->
+    <button id="backButton" class="back-btn">
+        <i class="fas fa-undo"></i> <!-- Ícone de seta curva -->
+    </button>
+    <form id="videoForm">
+        <label for="videoLink">Enter Video Link:</label>
+        <input type="text" id="videoLink" placeholder="Enter HLS/DASH manifest URL" required>
+        <select id="videoType">
+            <option value="hls">HLS</option>
+            <option value="dash">DASH</option>
+        </select>
+        <button type="submit">Add Video</button>
+    </form>
+     <!-- Campo para carregar um arquivo de links de vídeo (txt) -->
+     <form id="fileForm">
+        <label for="fileInput" id="fileInputLabel">Carregar arquivo de links (txt):</label>
+        <input type="file" id="fileInput" accept=".txt">
+        <button type="button" id="loadFileButton">Carregar Links</button>
+    </form>
+
+    <div>
+        <label for="layoutSelector">Select Layout:</label>
+        <select id="layoutSelector">  
+            <option value="1">Nx1</option>
+            <option value="2">Nx2</option>
+            <option value="3">Nx3</option>
+            <option value="4">Nx4</option>
+            <option value="5">Nx5</option>
+            <option value="6">Nx6</option>
+            <option value="7">Nx7</option>
+            <option value="8">Nx8</option>
+        </select>
+    </div>
+
+    <div id="videos"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
